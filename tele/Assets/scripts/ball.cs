@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ball : MonoBehaviour {
 
-	private Vector3 p, b;
+	private Vector3 p, b, point;
 	private CharacterController controller;
 	private float distance;
 	
@@ -24,9 +24,23 @@ public class ball : MonoBehaviour {
 		if (distance >= 10.0f) Destroy(this.gameObject);
 	}
 
-	void OnCollisionStay(Collision other)
+	void OnTriggerEnter(Collider other)
 	{
-		player.transform.position = transform.position;
+		/*
+		point = transform.position + new Vector3(-1,-1,-1);
 		if (distance >= 10.0f) Destroy(this.gameObject);
+		player.transform.position = point;
+		*/
+		Debug.Log("touch  "+other.gameObject.name+transform.position);
+	}
+
+	void OnCollisionEnter(Collision other)
+	{
+		/*
+		point = transform.position + new Vector3(-1,-1,-1);
+		if (distance >= 10.0f) Destroy(this.gameObject);
+		player.transform.position = point;
+		*/
+		Debug.Log("touch  " + other.gameObject.name + transform.position);
 	}
 }

@@ -29,9 +29,9 @@ public class motion : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) transform.position += transform.forward * -0.1f;
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject tele_ball = Instantiate(ball, transform.position+transform.forward*0.52f, transform.rotation);
+            GameObject tele_ball = Instantiate(ball, transform.position+transform.forward*1.0f, transform.rotation);
             Rigidbody t_b_rb = tele_ball.GetComponent<Rigidbody>();
-            force = transform.forward*1000 + new Vector3(0,1,0)*500;
+            force = transform.forward*100 + new Vector3(0,1,0)*50;
             t_b_rb.AddForce(force);
         }
 
