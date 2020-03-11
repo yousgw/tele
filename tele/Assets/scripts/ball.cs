@@ -21,17 +21,17 @@ public class ball : MonoBehaviour {
 		b = this.transform.position;
 		distance = Vector3.Distance(p, b);
 		//Debug.Log(distance);
-		if (distance >= 10.0f) Destroy(this.gameObject);
+		if (distance >= 20.0f) Destroy(this.gameObject);
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-		/*
-		point = transform.position + new Vector3(-1,-1,-1);
-		if (distance >= 10.0f) Destroy(this.gameObject);
-		player.transform.position = point;
-		*/
-		Debug.Log("touch  "+other.gameObject.name+transform.position);
+
+		player.transform.position = b ;
+		Destroy(this.gameObject);
+		
+		
+		Debug.Log("touch  "+other.gameObject.name+b+player.transform.position);
 	}
 
 	void OnCollisionEnter(Collision other)
